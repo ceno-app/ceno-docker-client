@@ -1,8 +1,8 @@
-# A ready-to-run client for the CENO network
+# A ready-to-run client for the Ceno network
 
 See <https://censorship.no/>.
 
-A CENO client has three main roles:
+A Ceno client has three main roles:
 
  1. Allowing a user to retrieve potentially censored content from injectors or other users.
  2. Sharing retrieved content with other users (seeding).
@@ -83,7 +83,7 @@ Please note that many mobile connections (and some domestic ones) use CGNAT whic
 
 ## Publishing a static cache
 
-If your computer stores a Ouinet static cache root directory `/path/to/my-static-cache` (containing a `.ouinet` hidden directory and maybe other data files), with content signed by CENO injectors, you can configure your client to seed it. When executing `docker run`, add the following arguments right before `equalitie/ceno-client`:
+If your computer stores a Ouinet static cache root directory `/path/to/my-static-cache` (containing a `.ouinet` hidden directory and maybe other data files), with content signed by Ceno injectors, you can configure your client to seed it. When executing `docker run`, add the following arguments right before `equalitie/ceno-client`:
 
     -v /path/to/my-static-cache:/var/opt/ouinet-static-cache:ro
 
@@ -91,20 +91,20 @@ Your client will start seeding as soon as it starts. Please note that you need t
 
 ## Testing the client with a browser
 
-**Warning:** Browsing via a CENO client on a computer is only supported for testing. Please use the CENO Browser for a better experience on Android.
+**Warning:** Browsing via a Ceno client on a computer is only supported for testing. Please use [Ceno Browser](https://censorship.no) for a better experience on Android.
 
-  1. Clone the CENO Web Extension repo: `git clone https://github.com/censorship-no/ceno-ext-settings.git`
+  1. Clone the Ceno Web Extension repo: `git clone https://github.com/censorship-no/ceno-ext-settings.git`
   2. Create a test profile for Firefox: `mkdir ceno-test`
   3. Run Firefox with the test profile: `firefox --no-remote --profile ceno-test`
   4. Go to <http://localhost:8078/> and install the client-specific CA certificate linked in there to identify web sites.
-  5. Enable the CENO Extension: in Firefox's *Add-ons* window, click on the gears icon, then *Debug Add-ons*, then *Load Temporary Add-on…* and choose the *manifest.json* file under the `ceno-ext-settings` directory.
-  6. Since CENO Browser v1.3.0 and newer uses HTTPS for all pages, enable *HTTPS-Only Mode* in Firefox's *Settings* window, under *Privacy & Security*. For older browsers lacking that option, install the [HTTPS by default][] extension instead.
+  5. Enable the Ceno Extension: in Firefox's *Add-ons* window, click on the gears icon, then *Debug Add-ons*, then *Load Temporary Add-on…* and choose the *manifest.json* file under the `ceno-ext-settings` directory.
+  6. Since Ceno Browser v1.3.0 and newer uses HTTPS for all pages, enable *HTTPS-Only Mode* in Firefox's *Settings* window, under *Privacy & Security*. For older browsers lacking that option, install the [HTTPS by default][] extension instead.
 
-**Note:** If you have an old CENO Extension (less than v1.4.0, click on *Manifest URL* to check its `version` close to the beginning), you also need to set `localhost` port `8077` as Firefox's proxy for protocols HTTP and HTTPS/SSL: <https://www.wikihow.com/Enter-Proxy-Settings-in-Firefox>
+**Note:** If you have an old Ceno Extension (less than v1.4.0, click on *Manifest URL* to check its `version` close to the beginning), you also need to set `localhost` port `8077` as Firefox's proxy for protocols HTTP and HTTPS/SSL: <https://www.wikihow.com/Enter-Proxy-Settings-in-Firefox>
 
 In subsequent test browser runs you will only need to follow steps 3 and 5.
 
-Browse freely or check the [CENO User Manual][ceno-man-test] for some testing instructions.
+Browse freely or check the [Ceno User Manual][ceno-man-test] for some testing instructions.
 
 [HTTPS by default]: https://addons.mozilla.org/ca/firefox/addon/https-by-default/
 [ceno-man-test]: https://censorship.no/user-manual/en/browser/testing.html
